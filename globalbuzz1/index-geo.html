@@ -1,0 +1,34 @@
+<html>
+  <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+    google.load('visualization', '1', { 'packages': ['map'] });
+    google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Inbound'],
+        ['UNITED STATES', 593 ],
+        ['CANADA' , 124 ],
+        ['UNITED KINGDOM' , 150 ],
+        ['INDIA'  , 209 ],
+	['CHINA' , 150 ],
+	['BRAZIL', 103 ],
+	['GERMANY', 160 ],
+	['ARGENTINA', 90 ]
+      ]);
+
+    var options = { showTip: true,useMapTypeControl: true };
+    var map = new google.visualization.GeoChart(document.getElementById('chart_div'));
+
+    map.draw(data, options);
+  };
+  
+  </script>
+  </head>
+  <body>
+ <!--  	<h1>Global Buzz</h1> -->
+    <div id="chart_div"></div>
+
+  </body>
+</html>
